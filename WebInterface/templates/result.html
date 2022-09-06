@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search result for: {{data.query}}</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+  </head>
+  <body>
+    <h1 class="title">Government Order Search System</h1>
+    <form action="/search" method="GET" class="SmallSearchForm">
+      <input value = "{{data.query}}" id="searchInput" type="text" name="query" />
+      <select onchange="hideShowAdvOpt(this)" name="type" id="type">
+        <option value="Keyword" {%if data.queryType == ""  %}selected{%endif%}>---</option>
+        <option value="Advanced" {%if data.queryType == "Advanced"  %}selected{%endif%}>Advanced</option>
+        <option value="Date" {%if data.queryType == "Date"  %}selected{%endif%}>Date</option>
+        <option value="OrderId" {%if data.queryType == "OrderId"  %}selected{%endif%}>Order id</option>
+        <option value="Place" {%if data.queryType == "Place"  %}selected{%endif%}>Place</option>
+      </select>
+      <div class="hidden" id="details">
+        <input value = "{{data.fromDate}}" type="date" name="FromDate" />
+        <input value = "{{data.toDate}}" type="date" name="ToDate" />
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <!--
+      <div class="SearchResultContainer">
+      <p>Showing result for: <b>SearchQuery</b></p>
+      <div class="SearchResult">
+        <a href="goog.ecol">Deputation of faculty from Government/Aided Polytechnic Colleges to M.Tech Programmes under the Scheme" QIP (Poly)S....</a>
+        <br>
+        <small>Thiruvanantpuram</small><small>| 02/10/2020</small>
+        <br>
+        <label>Order: G.O.(Rt)No.7/2021/HEDN</label>
+        <p>
+          Deputation of faculty from Government/Aided Polytechnic Colleges to M.Tech Programmes under the Scheme" QIP (Poly)Scheme AICTE QIP (Poly)during the academic year 2020-21
+        </p>
+      </div>
+    </div>
+    -->
+    <div class="resultBody">
+      <div class="SearchResultContainer">
+        <p>Showing result for: <b> <i>{{data.query}}</i> </b></p>
+        {% if data.resultAvailable %}
+          {% for d in data.result %}
+            <div class="SearchResult">
+              <a href="javascript:;" onclick="showDocFile('/viewDoc/{{d.Filename}}')">{{d.Abstract}}</a>
+              <br>
+              <small>{{d.Place}}</small><small>| {{d.Date}}</small>
+              <br>
+              <label>Order: {{d.GOID}}</label>
+              <p>
+                {{d.Body}}
+                <br>
+                {% if d.SCORE %}
+                <small><strong>Result Score: </strong>{{d.SCORE}}</small>
+                {% endif %}
+              </p>
+              
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No result found</p>
+        {% endif %}
+      </div>
+      <div class="docViewerArea" id="docViewerArea" style="display: none;">
+        <iframe src="/viewDoc/7_2021_HEDN.pdf" width="100%" height="1000"></iframe>
+      </div>
+    </div>
+    
+    
+    <!--
+      {% for d in data %}
+    <div>{{d.OrderID}}</div>
+    <div>{{d.Abstract}}</div>
+    <div>{{d.FileName}}</div>
+    <div>{{d.Date}}</div>
+    <div>{{d.Place}}</div>
+    {% endfor %}
+    <div class="SearchResult">
+          <a href="javascript:;" onclick="showDocFile('/viewDoc/7_2021_HEDN.pdf')">Deputation of faculty from Government/Aided Polytechnic Colleges to M.Tech Programmes under the Scheme" QIP (Poly)S....</a>
+          <br>
+          <small>Thiruvanantpuram</small><small>| 02/10/2020</small>
+          <br>
+          <label>Order: G.O.(Rt)No.7/2021/HEDN</label>
+          <p>
+            Deputation of faculty from Government/Aided Polytechnic Colleges to M.Tech Programmes under the Scheme" QIP (Poly)Scheme AICTE QIP (Poly)during the academic year 2020-21
+          </p>
+        </div>
+    -->
+      
+
+  </body>
+  <script>
+    //Get url param for type
+    var urlParams = new URLSearchParams(window.location.search);
+    var type = urlParams.get('type');
+    if (type=="Advanced"){
+      document.getElementById("details").style.display = "block";
+    }
+    else{
+      document.getElementById("details").style.display = "none";
+    }
+    function hideShowAdvOpt(element){
+      if (element.value=="Advanced"){
+        document.getElementById("details").style.display = "block";
+      }
+      else{
+        document.getElementById("details").style.display = "none";
+      }
+      inputElement = document.getElementById("searchInput");
+      //if type is date chenge inputElement type to date
+      if (element.value=="Date"){
+        inputElement.type = "date";
+      }
+      else{
+        inputElement.type = "text";
+      }
+    }
+  </script>
+</html>

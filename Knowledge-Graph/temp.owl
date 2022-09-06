@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#"
+     xml:base="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasA -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasA">
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Abstract"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Body"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Date"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Department"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#FileNo"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GOID"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#OrderStatus"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#References"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Status"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasAbstract -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasAbstract">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Abstract"/>
+        <rdfs:comment xml:lang="en">GO has abstract</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasBody -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasBody">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Body"/>
+        <rdfs:comment xml:lang="en">GO has body</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasDate -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Date"/>
+        <rdfs:comment xml:lang="en">GO has date</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasDepartment -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasDepartment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Department"/>
+        <rdfs:comment xml:lang="en">GO has department</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasFileNo -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasFileNo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#FileNo"/>
+        <rdfs:comment xml:lang="en">GO has file number</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasID -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GOID"/>
+        <rdfs:comment xml:lang="en">GO has Govt ID</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasOrderStatus -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasOrderStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#OrderStatus"/>
+        <rdfs:comment xml:lang="en">GO has order status</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasReference -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasReference">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#References"/>
+        <rdfs:comment xml:lang="en">GO has Reference</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#hasStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Status"/>
+        <rdfs:comment xml:lang="en">GO has status</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Abstract -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Abstract"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Body -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Body"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Date -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Date"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Department -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Department"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#FileNo -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#FileNo"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GO">
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Abstract"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Body"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Date"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Department"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#FileNo"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GOID"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#OrderStatus"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#References"/>
+        <hasA rdf:resource="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Status"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GOID -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GOID"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#OrderStatus -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#OrderStatus"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#References -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#References"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Status -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Status"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Abstract"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Body"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Date"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Department"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#FileNo"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#GOID"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#OrderStatus"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#References"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/SobyDamn/knowledge-base-GO/main/Knowledge-Graph/KGO_Ontology.owl#Status"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->

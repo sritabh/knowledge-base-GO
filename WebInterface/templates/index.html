@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Government Order Search System</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      div {
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      label {
+        margin-top: 0.33em;
+        display: inline-block;
+        font-size: large;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        padding-top: 2%;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <h1 class="title">Government Order Search System</h1>
+    <form action="http://localhost:8000/search" method="get">
+      <div class="SearchBarContainer">
+        <h2>Search Government Orders</h2>
+        <br />
+        <div>
+          <input
+            placeholder="Enter query"
+            class="bigSearchBar"
+            type="text"
+            name="query"
+            id="searchInput"
+          />
+          <select name="type" id="type" class="type">
+            <option value="Keyword" selected>---</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Date">Date</option>
+            <option value="OrderId">Order id</option>
+            <option value="Place">Place</option>
+          </select>
+          <br />
+          <div class="hidden" id="details">
+            <label for="FromDate">From Date </label>
+            <input
+              type="date"
+              id="FromDate"
+              name="FromDate"
+              placeholder="Enter From Date"
+            /><br />
+            <label for="ToDate">To Date </label>
+            <input
+              type="date"
+              id="ToDate"
+              name="ToDate"
+              placeholder="Enter To Date"
+            />
+          </div>
+        </div>
+        <br />
+        <button type="submit">Search</button>
+      </div>
+    </form>
+    <script>
+      $(".type").change(function () {
+        var ResponseId = $(this).val();
+        if (ResponseId == "Advanced") {
+          $("#details").removeClass("hidden");
+          $("#details").addClass("show");
+        } else {
+          $("#details").addClass("hidden");
+          $("#details").removeClass("show");
+        }
+        if (ResponseId == "Date") {
+          //Change search type of searchInput to date
+          $("#searchInput").attr("type", "date");
+        } else {
+          //Change search type of searchInput to text
+          $("#searchInput").attr("type", "text");
+        }
+        console.log(ResponseId);
+      });
+    </script>
+  </body>
+</html>

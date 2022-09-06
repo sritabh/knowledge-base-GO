@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+    <title>Government Order Search System</title>
+  </head>
+  <body>
+    <!--h1>Government Order Search System</h1-->
+    <div class="docViewerArea">
+      <label>{{data.GOID}}</label>
+      {% if data.hasReference %}
+      <div class="refContainer">
+        <h4>References:</h4>
+        <div class="referenceList">
+          {% for ref in data.references %}
+          <a href="/viewDoc/{{ref.filename}}?docType=refDoc" target="_blank">{{ref.GOID}}</a>
+          <br>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% if data.isRefDoc %}
+      <div class="refContainer">
+        <h4>Reference as base for:</h4>
+        <div class="referenceList">
+          {% for go in data.baseGOs %}
+          <a href="/viewDoc/{{go.filename}}" target="_blank">{{go.GOID}}</a>
+          <br>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      <br>
+      <div class="docArea">
+        {% if data.isRefDoc %}
+        <iframe src="/static/refDocs/{{data.filename}}.pdf"></iframe>
+        {% else %}
+        <iframe src="/static/docs/{{data.filename}}.pdf"></iframe>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
