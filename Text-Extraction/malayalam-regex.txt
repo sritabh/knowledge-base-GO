@@ -1,8 +1,5 @@
 Abstract+Department = (?<=Summary)((.|\n)*?)(.*)(S\.U\..*\n)
 
-//Stop when first occurence of S.U
-(?<=Summary)((.|\n)*)
-
 Govt Order ID(Match 1 group 4): (?<=Summary)((.|\n)*?)(.*)(S\.U\..*\n)
 
 Reference: (S.U..*\n*)\K(.|\n)*(?=\norder) or ((Reference))(.|\n)*(?=\norder\n)
