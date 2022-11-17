@@ -183,4 +183,14 @@ def mergeMalJSONDAT():
 
 
 
-mergeMalJSONDAT()
+#Open file "Knowledge-Graph/GO_DATA.json" and add Language field
+def addLanguageField():
+    with open("Knowledge-Graph/GO_DATA.json", "r") as f:
+        data = dict(json.loads(f.read()))
+        for item in data["items"]:
+            item["Language"] = "eng"
+    with open("Knowledge-Graph/GO_DATA.json", "w") as f:
+        print("Writing to file: GO_DATA.json")
+        f.write(json.dumps(data, indent=4))
+
+# addLanguageField()
