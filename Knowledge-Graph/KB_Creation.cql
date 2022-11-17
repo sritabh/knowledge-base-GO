@@ -41,6 +41,7 @@ MERGE(orderStatus:OrderStatus{value:item["Order Status"]})
 MERGE (status:Status {value:item["Status"]})
 MERGE(department:Department{value:item["Department"]})
 MERGE(directorate:Directorate{value:item["Directorate"]})
+MERGE(language:Language{value:item["Language"]})
 
 with item
 UNWIND item.References AS ref
@@ -103,6 +104,12 @@ UNWIND item.Subsection AS subVal
 MATCH (go:GO),(sub:Subsection)
 WHERE go.GOID = item["Order ID"] and sub.value = subVal
 MERGE (go)-[:hasSubsection]-(sub)
+
+WITH item
+UNWIND item.Language AS langVal
+MATCH (go:GO),(lang:Language)
+WHERE go.GOID = item["Order ID"] and lang.value = langVal
+MERGE (go)-[:hasSubsection]-(lang)
 
 
 
