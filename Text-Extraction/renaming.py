@@ -3,8 +3,8 @@ import json
 
 c_dir = os.getcwd()
 print(c_dir)
-files_1_dir = c_dir + "/Text-Extraction/json_phase3-final"
-files_2_dir = c_dir +"/Text-Extraction/input"
+files_1_dir = c_dir + "/Text-Extraction/mal_json_phase3-final"
+files_2_dir = c_dir +"/Text-Extraction/input/mal"
 
 files_list_1 = os.listdir(files_1_dir)
 files_list_2 = os.listdir(files_2_dir)
