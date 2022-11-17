@@ -171,14 +171,7 @@ def mergeMalJSONDAT():
     for file_name in files:
         with open(output_files_dir+"/"+file_name, "r") as f:
             d = dict(json.loads(f.read()))
-            d["Date"] = d["Date"].replace("/","-")#Change date format to match with the date format in the graph database
-            d["file_name"] = file_name.split(".")[0] #adding filename
-            #Add directorate field
-            #Directorate is J for department = "HIGHER EDUCATION (J) DEPARTMENT"
-            try:
-                d["Directorate"] = re.findall(r'\((.*?)\)', d["Department"])[0]
-            except IndexError:
-                d["Directorate"] = "J" #Default directorate is J NOTE: adding it just for the sake of not keeping the field blank
+            d["Language"] = "mal"
             data["items"].append(d)
     with open("Knowledge-Graph/GO_DATA_mal.json", "w") as f:
         print("Writing to file: GO_DATA_mal.json")
