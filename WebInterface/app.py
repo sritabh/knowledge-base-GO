@@ -50,7 +50,12 @@ def show_result():
 def viewDoc(filename):
     docType = request.args.get("docType")
     data = {}
+    lang = getLanguage(filename)
+    # print(filename)
+    print("Language: ",lang)
     data["filename"] = filename #ID of the file
+    if lang=="mal":
+        data["filename"] = "mal/"+filename
     data["GOID"] = goid_formatter(filename)
     data["isRefDoc"] = False
     if docType == "refDoc":

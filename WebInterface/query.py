@@ -182,6 +182,19 @@ def getDate(goid:str):
         return response[0]["d.date"]  #return the abstract
     except Exception as e:
         print("Query failed: ",e)
+def getLanguage(goid:str):
+    """
+    Function to extract Date of the given order
+    Parameter: goid (string): containing the Govt Order Id of the notice
+    Return the Date (string) of the goid
+    """
+    query = "MATCH p = (go:GO)-[r:hasLanguage]->(d:Language) where go.GOID = '"+goid+"' return d.value"
+    try:
+        session = driver.session()
+        response = list(session.run(query))
+        return response[0]["d.value"]  #return the abstract
+    except Exception as e:
+        print("Query failed: ",e)
 
 
 
@@ -234,6 +247,7 @@ def getDetails(response:list):
             d["Place"] = getPlace(record["GOID"])
             d["References"] = getReferences(record["GOID"])
             d["GOID"] = record["GOID"]
+            d["Language"] = getLanguage(record["GOID"])
             if "SCORE" in record.keys():
                 d["SCORE"] = record["SCORE"]
             details.append(d)

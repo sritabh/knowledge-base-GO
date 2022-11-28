@@ -40,16 +40,25 @@
     <div class="resultBody">
       <div class="SearchResultContainer">
         <p>Showing result for: <b> <i>{{data.query}}</i> </b></p>
+        
+
         {% if data.resultAvailable %}
           {% for d in data.result %}
             <div class="SearchResult">
-              <a href="javascript:;" onclick="showDocFile('/viewDoc/{{d.Filename}}')">{{d.Abstract}}</a>
+             
+              <a href="javascript:;" onclick="showDocFile('/viewDoc/{{d.Filename}}')">{{d.Abstract}} 
+                {% if d.Language == "mal" %}
+                  <b> [MAL]</b>
+                {% endif %}
+              </a>
               <br>
               <small>{{d.Place}}</small><small>| {{d.Date}}</small>
               <br>
               <label>Order: {{d.GOID}}</label>
+              
               <p>
                 {{d.Body}}
+                
                 <br>
                 {% if d.SCORE %}
                 <small><strong>Result Score: </strong>{{d.SCORE}}</small>

@@ -150,7 +150,6 @@ class DatabaseManagement:
             
             #Obtaining order id of the file
             searchResult['OrderID'] = OrderID
-
             return searchResult
         except Exception as e:
             print("Query failed: ",e)

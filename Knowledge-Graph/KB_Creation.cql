@@ -109,7 +109,7 @@ WITH item
 UNWIND item.Language AS langVal
 MATCH (go:GO),(lang:Language)
 WHERE go.GOID = item["Order ID"] and lang.value = langVal
-MERGE (go)-[:hasSubsection]-(lang)
+MERGE (go)-[:hasLanguage]-(lang)
 
 
 
