@@ -2,6 +2,7 @@ from socket import fromfd
 from flask import Flask, render_template,request
 from flask import *
 from query import *
+import re
 
 app = Flask(__name__)
 
@@ -13,12 +14,14 @@ def home():
 @app.route("/search",methods= ["GET"])
 def show_result():
     query = request.args.get("query")
+    #Replace non alphanumeric from query with space
+    clean_query = re.sub(r"[^A-Za-z0-9]", " ", query)
     option = request.args.get("type")
     #Advanced options
     fromDate = request.args.get("FromDate") if request.args.get("FromDate") !="" else None
     toDate = request.args.get("ToDate") if request.args.get("ToDate") !="" else None
 
-    response = UserInterface(query,option,fromDate,toDate)
+    response = UserInterface(clean_query,option,fromDate,toDate) #Using clean query
 
     if len(response) == 0:
         response = None
@@ -29,6 +32,8 @@ def show_result():
             res['GOID'] = goid_formatter(filename)
             res['Filename'] = filename
             res["Body"] = getBody(filename)[:270] + "..."
+            res["Department"] = getDepartment(filename)
+            res["Date"] = getDate(filename)
             #res['Abstract'] = res['Abstract'][:160] + "..."
 
     #Add extra parameters
@@ -41,7 +46,7 @@ def show_result():
     if response == None:
         data["resultAvailable"] = False
     data["result"] = response
-    print(data)
+    # print(data)
     return render_template("result.html", data = data)
 
 
@@ -52,7 +57,7 @@ def viewDoc(filename):
     data = {}
     lang = getLanguage(filename)
     # print(filename)
-    print("Language: ",lang)
+    # print("Language: ",lang)
     data["filename"] = filename #ID of the file
     if lang=="mal":
         data["filename"] = "mal/"+filename
@@ -82,7 +87,7 @@ def viewDoc(filename):
             go_dict["GOID"] = goid_formatter(go)
             go_dict["filename"] = go
             data["baseGOs"].append(go_dict)
-    print(data)
+    # print(data)
     return render_template("pdf.html",data=data)
 
  

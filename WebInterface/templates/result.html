@@ -9,7 +9,7 @@
     <h1 class="title">Government Order Search System</h1>
     <form action="/search" method="GET" class="SmallSearchForm">
       <input value = "{{data.query}}" id="searchInput" type="text" name="query" />
-      <select onchange="hideShowAdvOpt(this)" name="type" id="type">
+      <select style ="display: none;" onchange="hideShowAdvOpt(this)" name="type" id="type">
         <option value="Keyword" {%if data.queryType == ""  %}selected{%endif%}>---</option>
         <option value="Advanced" {%if data.queryType == "Advanced"  %}selected{%endif%}>Advanced</option>
         <option value="Date" {%if data.queryType == "Date"  %}selected{%endif%}>Date</option>
@@ -54,8 +54,12 @@
               <br>
               <small>{{d.Place}}</small><small>| {{d.Date}}</small>
               <br>
-              <label>Order: {{d.GOID}}</label>
-              
+              <small>{{d.GOID}}</small>
+              <br>
+              <small>{{d.Department}}</small><small>| {{d.Date}}</small>
+              <!-- <label>Order: {{d.GOID}}</label>
+              <br>
+              <label>Department: {{d.Department}}</label> -->
               <p>
                 {{d.Body}}
                 

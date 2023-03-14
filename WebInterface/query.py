@@ -21,7 +21,7 @@ try:
     driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "123")) #establishing connection to database
     print("Connection established")
 except Exception as e:
-    print(e)
+    print("Connection Error:",e)
 
 
 
@@ -45,7 +45,7 @@ def queryByDate(date:str):
             searchResult.append(d)
         return searchResult
     except Exception as e:
-        print("Query failed: ",e) #prints error if one occurs
+        print("Date Query failed: ",e) #prints error if one occurs
 
 
 
@@ -80,7 +80,7 @@ def queryByOrderID(orderID:str,fromDate:str=None,toDate:str=None):
             searchResult.append(dict(record[0]))
         return searchResult #return the list of GOIDs
     except Exception as e:
-        print("Query failed: ",e) #prints error if one occurs
+        print("OrderID Query failed: ",e) #prints error if one occurs
 
 
 
@@ -114,7 +114,7 @@ def queryByPlace(place:str,fromDate:str=None, toDate:str=None):
             searchResult.append(d)
         return searchResult
     except Exception as e:
-        print("Query failed: ",e) #print error if one occurs
+        print("Place Query failed: ",e) #print error if one occurs
 
 
 
@@ -129,10 +129,10 @@ def queryByAbstractAndBody(keyword:str,fromDate:str=None,toDate:str=None):
     query=""
     #If fromDate is not null then searching is performed within the range of dates
     if(fromDate is None):
-        query = "CALL db.index.fulltext.queryNodes('BodyAndAbstract', '"+keyword+"') YIELD node, score MATCH (go:GO)-[]-(node) RETURN go.GOID, collect(score)[0] LIMIT 10" #query for searching
+        query = "CALL db.index.fulltext.queryNodes('BodyAndAbstract', \""+keyword+"\") YIELD node, score MATCH (go:GO)-[]-(node) RETURN go.GOID, collect(score)[0] LIMIT 10" #query for searching
     else:
         query="CALL db.index.fulltext.queryNodes('BodyAndAbstract', '"+keyword+"') YIELD node, score MATCH (node)-[]-(go:GO)-[r:hasDate]-(d:Date) where d.date>=date('"+fromDate+"') and d.date<=date('"+toDate+"') RETURN go.GOID, collect(score)[0]" #query for searching
-
+    print("Query: ",query)
     session = None
     response = None
     try:
@@ -149,7 +149,7 @@ def queryByAbstractAndBody(keyword:str,fromDate:str=None,toDate:str=None):
             searchResult.append(d)
         return searchResult
     except Exception as e:
-        print("Query failed: ",e)
+        print("Index Query failed: ",e)
 
 
 
@@ -165,7 +165,7 @@ def getAbstract(goid:str):
         response = list(session.run(query))
         return response[0]["a.value"] #return the abstract
     except Exception as e:
-        print("Query failed: ",e)
+        print("Abstract Query failed: ",e)
 
 
 
@@ -181,7 +181,7 @@ def getDate(goid:str):
         response = list(session.run(query))
         return response[0]["d.date"]  #return the abstract
     except Exception as e:
-        print("Query failed: ",e)
+        print("Date Query failed: ",e)
 def getLanguage(goid:str):
     """
     Function to extract Date of the given order
@@ -189,12 +189,13 @@ def getLanguage(goid:str):
     Return the Date (string) of the goid
     """
     query = "MATCH p = (go:GO)-[r:hasLanguage]->(d:Language) where go.GOID = '"+goid+"' return d.value"
+    print(query)
     try:
         session = driver.session()
         response = list(session.run(query))
         return response[0]["d.value"]  #return the abstract
     except Exception as e:
-        print("Query failed: ",e)
+        print("Language Query failed: ",e)
 
 
 
@@ -205,6 +206,20 @@ def getPlace(goid:str):
     Return the Place (string) of the goid
     """
     query = "MATCH (go:GO)-[r:hasPlace]-(p:Place) where go.GOID = '"+goid+"' RETURN p.value"
+    try:
+        session = driver.session()
+        response = list(session.run(query))
+        return response[0]["p.value"]
+    except Exception as e:
+        print("Query failed: ",e)
+
+def getDepartment(goid:str):
+    """
+    Function to extract Department of the given order
+    Parameter: goid (string): containing the Govt Order Id of the notice
+    Return the Place (string) of the goid
+    """
+    query = "MATCH (go:GO)-[r:hasDepartment]-(p:Department) where go.GOID = '"+goid+"' RETURN p.value"
     try:
         session = driver.session()
         response = list(session.run(query))
@@ -248,6 +263,7 @@ def getDetails(response:list):
             d["References"] = getReferences(record["GOID"])
             d["GOID"] = record["GOID"]
             d["Language"] = getLanguage(record["GOID"])
+            d["Department"] = getDepartment(record["GOID"])
             if "SCORE" in record.keys():
                 d["SCORE"] = record["SCORE"]
             details.append(d)

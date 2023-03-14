@@ -35,7 +35,7 @@ UNWIND value.items AS item
 MERGE (go:GO {GOID: item["Order ID"]})
 MERGE (abstract:Abstract {value:item.Abstract})
 
-MERGE (body:Body {value:item["Body"]})
+MERGE (body:Body {value:item["Body"],goID:replace(item["Order ID"],"_","/") +" "})
 MERGE (place:Place {value:item["Place"]})
 MERGE(orderStatus:OrderStatus{value:item["Order Status"]})
 MERGE (status:Status {value:item["Status"]})
@@ -50,7 +50,7 @@ with item
 UNWIND item.Subsection AS sub
 MERGE (subsection:Subsection {value:sub})
 
-MERGE (date:Date {date:date(datetime({epochmillis: apoc.date.parse(item["Date"], "ms", "dd-MM-yyyy")}))})
+MERGE (date:Date {date:date(datetime({epochmillis: apoc.date.parse(item["Date"], "ms", "dd-MM-yyyy")})), value: replace(item["Date"],"-"," ")})
 
 WITH item
 MATCH (go:GO),
@@ -127,6 +127,8 @@ DROP INDEX BodyAndAbstract
 //Fulltext allows to do distance searching of keywords or phrases with the help of the fulltext index and also provides scores
 
 CREATE FULLTEXT INDEX BodyAndAbstract FOR (n:Body|Abstract) ON EACH [n.value]
+
+CREATE FULLTEXT INDEX BodyAndAbstract FOR (n:Abstract|Department|Body|Place|Date|Reference) ON EACH [n.value,n.goID]
 
 //Once fulltext search is created, perform text based search easily
 //Search Query - "Dr.Jayasankar Prasad continued to hold full additional"
