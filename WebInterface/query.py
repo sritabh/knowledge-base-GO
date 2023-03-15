@@ -129,7 +129,7 @@ def queryByAbstractAndBody(keyword:str,fromDate:str=None,toDate:str=None):
     query=""
     #If fromDate is not null then searching is performed within the range of dates
     if(fromDate is None):
-        query = "CALL db.index.fulltext.queryNodes('BodyAndAbstract', \""+keyword+"\") YIELD node, score MATCH (go:GO)-[]-(node) RETURN go.GOID, collect(score)[0] LIMIT 10" #query for searching
+        query = "CALL db.index.fulltext.queryNodes('BodyAndAbstract', '"+keyword+"') YIELD node, score MATCH (go:GO)-[]-(node) RETURN go.GOID, collect(score)[0] LIMIT 10" #query for searching
     else:
         query="CALL db.index.fulltext.queryNodes('BodyAndAbstract', '"+keyword+"') YIELD node, score MATCH (node)-[]-(go:GO)-[r:hasDate]-(d:Date) where d.date>=date('"+fromDate+"') and d.date<=date('"+toDate+"') RETURN go.GOID, collect(score)[0]" #query for searching
     print("Query: ",query)

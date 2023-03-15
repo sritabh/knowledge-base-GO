@@ -193,4 +193,23 @@ def addLanguageField():
         print("Writing to file: GO_DATA.json")
         f.write(json.dumps(data, indent=4))
 
-# addLanguageField()
+
+f = open("Knowledge-Graph/GO_DATA.json", "r")
+data = dict(json.loads(f.read()))
+
+#List files
+#Create set of all files
+a = 0
+b = 0
+for item in data["items"]:
+    if len(item["Subsection"])==0:
+        print(item["Order ID"])
+    if len(item["References"])==0:
+        a+=1
+    else:
+        b+=1
+    # allFiles.add(item["Order ID"])
+
+print("No reference ",a)
+print("With reference ",b)
+

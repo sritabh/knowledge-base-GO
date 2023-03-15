@@ -44,11 +44,12 @@ MERGE(directorate:Directorate{value:item["Directorate"]})
 MERGE(language:Language{value:item["Language"]})
 
 with item
-UNWIND item.References AS ref
+FOREACH (ref IN item.References |
 MERGE (reference:Reference {value:ref})
-with item
-UNWIND item.Subsection AS sub
+)
+FOREACH (sub IN item.Subsection |
 MERGE (subsection:Subsection {value:sub})
+)
 
 MERGE (date:Date {date:date(datetime({epochmillis: apoc.date.parse(item["Date"], "ms", "dd-MM-yyyy")})), value: replace(item["Date"],"-"," ")})
 

@@ -15,13 +15,13 @@ def home():
 def show_result():
     query = request.args.get("query")
     #Replace non alphanumeric from query with space
-    clean_query = re.sub(r"[^A-Za-z0-9]", " ", query)
+    # clean_query = re.sub(r"[^A-Za-z0-9]", " ", query)
     option = request.args.get("type")
     #Advanced options
     fromDate = request.args.get("FromDate") if request.args.get("FromDate") !="" else None
     toDate = request.args.get("ToDate") if request.args.get("ToDate") !="" else None
 
-    response = UserInterface(clean_query,option,fromDate,toDate) #Using clean query
+    response = UserInterface(query,option,fromDate,toDate) #Using clean query
 
     if len(response) == 0:
         response = None
