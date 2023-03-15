@@ -21,9 +21,10 @@ def show_result():
     fromDate = request.args.get("FromDate") if request.args.get("FromDate") !="" else None
     toDate = request.args.get("ToDate") if request.args.get("ToDate") !="" else None
 
-    response = UserInterface(query,option,fromDate,toDate) #Using clean query
-
-    if len(response) == 0:
+    # response = UserInterface(query,option,fromDate,toDate) 
+    response = SearchInterface(query)
+    print(response)
+    if response is not None and len(response) == 0:
         response = None
     
     if response != None:
@@ -32,8 +33,8 @@ def show_result():
             res['GOID'] = goid_formatter(filename)
             res['Filename'] = filename
             res["Body"] = getBody(filename)[:270] + "..."
-            res["Department"] = getDepartment(filename)
-            res["Date"] = getDate(filename)
+            res["Department"] = res['Department']
+            res["Date"] = res['Date']
             #res['Abstract'] = res['Abstract'][:160] + "..."
 
     #Add extra parameters

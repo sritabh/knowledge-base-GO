@@ -118,6 +118,32 @@ def queryByPlace(place:str,fromDate:str=None, toDate:str=None):
 
 
 
+def fulltextQuery(query:str):
+    """
+    Function for performing fulltext search
+    NOTE: Fulltext in neo4j is implemented using Lucene
+    """
+    query = "CALL db.index.fulltext.queryNodes('BodyAndAbstract', '"+query+"') YIELD node, score MATCH (go:GO)-[]-(node) RETURN go.GOID,go.lang,collect(score)[0]"
+    session = None
+    response = None
+    try:
+        session = driver.session()
+        
+        response = list(session.run(query)) #response obtained
+
+        #formatting the response to return the Govt Order ID of matched records
+        searchResult = []
+        for record in response:
+            d =dict()
+            d["GOID"] = dict(record)["go.GOID"] #the GOIDs of matched notices
+            d["SCORE"] = dict(record)["collect(score)[0]"] #corresponding SCOREs of each GOID
+            d["LANG"] = dict(record)["go.lang"] #corresponding LANGs of each GOID
+            searchResult.append(d)
+        return searchResult
+    except Exception as e:
+        print("FULLTEXT Query failed: ",e)
+
+
 def queryByAbstractAndBody(keyword:str,fromDate:str=None,toDate:str=None):
     """
     Function for performing keyword search using ABSTRACT and BODY (FULLTEXT SEARCh)
@@ -186,14 +212,14 @@ def getLanguage(goid:str):
     """
     Function to extract Date of the given order
     Parameter: goid (string): containing the Govt Order Id of the notice
-    Return the Date (string) of the goid
+    Return the language of the document
     """
-    query = "MATCH p = (go:GO)-[r:hasLanguage]->(d:Language) where go.GOID = '"+goid+"' return d.value"
+    query = "MATCH (go:GO) where go.GOID = '"+goid+"' return go.lang"
     print(query)
     try:
         session = driver.session()
         response = list(session.run(query))
-        return response[0]["d.value"]  #return the abstract
+        return response[0]["go.lang"]  #return the abstract
     except Exception as e:
         print("Language Query failed: ",e)
 
@@ -252,6 +278,15 @@ def getDetails(response:list):
     Function to extract Details of the given order (Date, Place, OrderId, References, Abstract)
     Parameter: response (list): containing the list of multiple Govt Order Ids whose details are needed to be displayed
     Return the LIST of Dictionaries - each dictionary consists of details of one Govt Order
+    Each response has
+    Abstract: Abstract of the GO
+    Date: Date of the GO
+    Place: Place of the GO
+    References: List of References of the GO
+    GOID: Govt Order ID of the GO
+    Language: Language of the GO
+    Department: Department of the GO
+    SCORE: Score of the GO
     """
     details = []
     try:
@@ -262,7 +297,7 @@ def getDetails(response:list):
             d["Place"] = getPlace(record["GOID"])
             d["References"] = getReferences(record["GOID"])
             d["GOID"] = record["GOID"]
-            d["Language"] = getLanguage(record["GOID"])
+            d["Language"] = getLanguage(record["GOID"]) #Adding language to the details
             d["Department"] = getDepartment(record["GOID"])
             if "SCORE" in record.keys():
                 d["SCORE"] = record["SCORE"]
@@ -329,6 +364,29 @@ def UserInterface(query:str,type:str,fromDate:str=None,toDate:str=None):
         response = queryByAbstractAndBody(query,fromDate,toDate)
     else:
         response = queryByAbstractAndBody(query,fromDate,toDate)
+    try:
+        useful_response = getDetails(response) #getting useful details of each file
+        return useful_response #returning the data to the user
+    except:
+        print("Error: No results found")
+        return None #NoneType error
+
+def SearchInterface(query:str):
+    """
+    Extended fulltext search interface to user
+    Returns the data which would be useful for user's search result
+    Each response has
+    Abstract: Abstract of the GO
+    Date: Date of the GO
+    Place: Place of the GO
+    References: List of References of the GO
+    GOID: Govt Order ID of the GO
+    Language: Language of the GO
+    Department: Department of the GO
+    SCORE: Score of the GO
+    """
+    response = fulltextQuery(query)
+    
     try:
         useful_response = getDetails(response) #getting useful details of each file
         return useful_response #returning the data to the user
