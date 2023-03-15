@@ -32,7 +32,7 @@
 WITH "file:///GO_DATA.json" AS url
 CALL apoc.load.json(url) YIELD value
 UNWIND value.items AS item
-MERGE (go:GO {GOID: item["Order ID"]})
+MERGE (go:GO {GOID: item["Order ID"],lang:item["Language"],subsection:item.Subsection})
 MERGE (abstract:Abstract {value:item.Abstract})
 
 MERGE (body:Body {value:item["Body"],goID:replace(item["Order ID"],"_","/") +" "})
@@ -41,7 +41,6 @@ MERGE(orderStatus:OrderStatus{value:item["Order Status"]})
 MERGE (status:Status {value:item["Status"]})
 MERGE(department:Department{value:item["Department"]})
 MERGE(directorate:Directorate{value:item["Directorate"]})
-MERGE(language:Language{value:item["Language"]})
 
 with item
 FOREACH (ref IN item.References |
@@ -95,22 +94,20 @@ WHERE go.GOID = item["Order ID"] and directorate.value = item["Directorate"]
 MERGE (go)-[:hasDirectorate]-(directorate)
 
 WITH item
-UNWIND item.References AS refVal
+UNWIND (CASE item.References WHEN [] then ["None"] else item.References end) as refVal
 MATCH (go:GO),(ref:Reference)
 WHERE go.GOID = item["Order ID"] and ref.value = refVal
 MERGE (go)-[:hasReference]-(ref)
 
-WITH item
-UNWIND item.Subsection AS subVal
+//Subsection Relation with GO
 MATCH (go:GO),(sub:Subsection)
-WHERE go.GOID = item["Order ID"] and sub.value = subVal
+WHERE sub.value in go.subsection
 MERGE (go)-[:hasSubsection]-(sub)
 
-WITH item
-UNWIND item.Language AS langVal
-MATCH (go:GO),(lang:Language)
-WHERE go.GOID = item["Order ID"] and lang.value = langVal
-MERGE (go)-[:hasLanguage]-(lang)
+
+//Remove subsection as it is not required
+MATCH (go:GO)
+REMOVE go.subsection
 
 
 

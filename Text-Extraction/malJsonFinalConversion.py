@@ -202,14 +202,9 @@ data = dict(json.loads(f.read()))
 a = 0
 b = 0
 for item in data["items"]:
-    if len(item["Subsection"])==0:
-        print(item["Order ID"])
-    if len(item["References"])==0:
+    if len(item["Subsection"])>1:
         a+=1
-    else:
-        b+=1
-    # allFiles.add(item["Order ID"])
 
-print("No reference ",a)
+print("Count ",a)
 print("With reference ",b)
 
