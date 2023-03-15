@@ -66,6 +66,11 @@ h1.title {
 
 div.SearchResultContainer {
   padding: 20px;
+  flex-direction: column;
+  /* border: 2px solid yellow; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  width: 500px;
 }
 
 div.SearchResult{

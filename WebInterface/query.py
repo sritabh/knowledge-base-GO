@@ -221,7 +221,7 @@ def getLanguage(goid:str):
     try:
         session = driver.session()
         response = list(session.run(query))
-        return response[0]["go.lang"]  #return the abstract
+        return response[0]["go.lang"] if len(response)>0 else None  #return the language
     except Exception as e:
         print("Language Query failed: ",e)
 
