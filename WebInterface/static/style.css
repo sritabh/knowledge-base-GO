@@ -111,6 +111,9 @@ div.SearchResult p {
 }
 
 .docViewerArea {
+  position: sticky;
+  z-index: 10;
+  top: 0;
   padding: 5px;
   width: 100%;
   height: 100%;

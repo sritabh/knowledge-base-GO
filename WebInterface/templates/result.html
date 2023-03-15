@@ -71,6 +71,31 @@
               
             </div>
           {% endfor %}
+          <div style="padding:25px;text-align: center;">
+            {% if data.prevPageAvailable %}
+              <form method="GET" style="display: inline;">
+                <div class="hidden">
+                  <input name ="query" value="{{data.query}}">
+                  <input name ="page" value="{{data.prevPage}}"> 
+                </div>
+                <button type="submit">Previous</button>
+              </form>
+            {% endif %}
+            {% if data.prevPageAvailable %}
+              {% if data.nextPageAvailable %}
+                -
+              {% endif %}
+            {% endif %}
+            {% if data.nextPageAvailable %}
+            <form method="GET" style="display: inline;">
+              <div class="hidden">
+                <input name ="query" value="{{data.query}}">
+                <input name ="page" value="{{data.nextPage}}"> 
+              </div>
+              <button type="submit">Next</button>
+            </form>
+            {% endif %}
+          </div>
         {% else %}
           <p>No result found</p>
         {% endif %}

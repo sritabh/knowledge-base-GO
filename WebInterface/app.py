@@ -14,6 +14,9 @@ def home():
 @app.route("/search",methods= ["GET"])
 def show_result():
     query = request.args.get("query")
+    page = int(request.args.get("page") if request.args.get("page") != None else 1)
+    print("PAGE",page)
+
     #Replace non alphanumeric from query with space
     # clean_query = re.sub(r"[^A-Za-z0-9]", " ", query)
     option = request.args.get("type")
@@ -22,8 +25,7 @@ def show_result():
     toDate = request.args.get("ToDate") if request.args.get("ToDate") !="" else None
 
     # response = UserInterface(query,option,fromDate,toDate) 
-    response = SearchInterface(query)
-    print(response)
+    response = SearchInterface(query,page)
     if response is not None and len(response) == 0:
         response = None
     
@@ -42,6 +44,10 @@ def show_result():
     data["query"] = query
     data["queryType"] = option
     data["resultAvailable"] = True
+    data["nextPageAvailable"] = True if response != None and len(response) == 10 else False
+    data["prevPageAvailable"] = True if page > 1 else False
+    data["nextPage"] = page+1
+    data["prevPage"] = page-1
     data["fromDate"] = fromDate
     data["toDate"] = toDate
     if response == None:
