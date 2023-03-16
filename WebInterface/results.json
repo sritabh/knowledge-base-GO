@@ -1,0 +1,614 @@
+{
+    "0": {
+        "query": "Military welfare department allowed for appointment to the existing post of clerk",
+        "fromOrderID": "9/2022/MWDN",
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.9/2022/MWDN",
+                "Date": "2022-06-01",
+                "Score": 16.1754207611084,
+                "Department": "MILITARY WELFARE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1561/2020/HEDN",
+                "Date": "2020-12-17",
+                "Score": 5.286540985107422,
+                "Department": "HIGHER EDUCATION (J) DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1188/2022/HaFWDN",
+                "Date": "2022-10-02",
+                "Score": 4.908498764038086,
+                "Department": "HEALTH AND FAMILY WELFARE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1616/2020/HEDN",
+                "Date": "2020-12-24",
+                "Score": 4.720052719116211,
+                "Department": "HIGHER EDUCATION ({L) DEPARTMENT."
+            },
+            {
+                "ID": "G.O.(Rt)No.131/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 4.482448101043701,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.9/2022/MWDN",
+                "Date": "2022-06-01",
+                "Score": 20.392925262451172,
+                "Department": "MILITARY WELFARE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1188/2022/HaFWDN",
+                "Date": "2022-10-02",
+                "Score": 6.674072742462158,
+                "Department": "HEALTH AND FAMILY WELFARE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1561/2020/HEDN",
+                "Date": "2020-12-17",
+                "Score": 6.662869453430176,
+                "Department": "HIGHER EDUCATION (J) DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1616/2020/HEDN",
+                "Date": "2020-12-24",
+                "Score": 6.6284284591674805,
+                "Department": "HIGHER EDUCATION ({L) DEPARTMENT."
+            },
+            {
+                "ID": "G.O.(Rt)No.131/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 6.094170570373535,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            }
+        ]
+    },
+    "1": {
+        "query": "Sports equipment for financial year 2022",
+        "fromOrderID": "253/2022/WaCDDN",
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.253/2022/WaCDDN",
+                "Date": "2022-05-24",
+                "Score": 9.885025024414062,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.695/2022/HEDN",
+                "Date": "2027-05-16",
+                "Score": 3.5233993530273438,
+                "Department": "HIGHER EDUCATION  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.250/2022/WaCDDN",
+                "Date": "2022-05-24",
+                "Score": 3.171471118927002,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.130/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 3.1127877235412598,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.480/2022/DMDN",
+                "Date": "2022-05-28",
+                "Score": 2.8739967346191406,
+                "Department": "DISASTER MANAGEMENT DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.253/2022/WaCDDN",
+                "Date": "2022-05-24",
+                "Score": 12.236360549926758,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.695/2022/HEDN",
+                "Date": "2027-05-16",
+                "Score": 4.2205705642700195,
+                "Department": "HIGHER EDUCATION  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1378/2020/HEDN",
+                "Date": "2020-11-04",
+                "Score": 4.146908283233643,
+                "Department": "HIGHER EDUCATION (J) DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.250/2022/WaCDDN",
+                "Date": "2022-05-24",
+                "Score": 3.5746231079101562,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.130/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 3.537435293197632,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            }
+        ]
+    },
+    "2": {
+        "query": "additional post in Department of Energy",
+        "fromOrderID": "8/2022/DoEN",
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.8/2022/DoEN",
+                "Date": "2022-05-26",
+                "Score": 5.3323750495910645,
+                "Department": "DEPARTMENT OF ENERGY ."
+            },
+            {
+                "ID": "G.O.(Rt)No.11/2021U/HEDN",
+                "Date": "2021-01-01",
+                "Score": 3.198486089706421,
+                "Department": "HIGHER EDUCATION (G) DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1356/2020/HEDN",
+                "Date": "2020-10-30",
+                "Score": 2.691460132598877,
+                "Department": "HIGHER EDUCATION (J) DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.9/2022/MWDN",
+                "Date": "2022-06-01",
+                "Score": 2.5802721977233887,
+                "Department": "MILITARY WELFARE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.237/2022/ACN",
+                "Date": "2022-05-29",
+                "Score": 2.557433605194092,
+                "Department": "AYUSH  CATEGORY"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.8/2022/DoEN",
+                "Date": "2022-05-26",
+                "Score": 6.400593280792236,
+                "Department": "DEPARTMENT OF ENERGY ."
+            },
+            {
+                "ID": "G.O.(Rt)No.237/2022/ACN",
+                "Date": "2022-05-29",
+                "Score": 4.441603660583496,
+                "Department": "AYUSH  CATEGORY"
+            },
+            {
+                "ID": "G.O.(Rt)No.9/2022/MWDN",
+                "Date": "2022-06-01",
+                "Score": 4.375236511230469,
+                "Department": "MILITARY WELFARE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.459/2022/ADN",
+                "Date": "2022-05-26",
+                "Score": 4.309848785400391,
+                "Department": "AGRICULTURE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.799/2022/HEDN",
+                "Date": "2022-05-28",
+                "Score": 4.1599578857421875,
+                "Department": "HIGHER EDUCATION  DEPARTMENT"
+            }
+        ]
+    },
+    "3": {
+        "query": "Monsoon disaster in malappuram order released on 25/5/2022",
+        "fromOrderID": "469/2022/DMDN",
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.255/2022/WaCDDN",
+                "Date": "2022-05-25",
+                "Score": 4.875695705413818,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.488/2022/IDN",
+                "Date": "2022-05-24",
+                "Score": 4.651160717010498,
+                "Department": "INDUSTRIES  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.480/2022/DMDN",
+                "Date": "2022-05-28",
+                "Score": 4.420937538146973,
+                "Department": "DISASTER MANAGEMENT DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.469/2022/DMDN",
+                "Date": "2022-05-25",
+                "Score": 4.307174205780029,
+                "Department": "DISASTER MANAGEMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.604/2022/EaSDN",
+                "Date": "2022-05-25",
+                "Score": 4.194197654724121,
+                "Department": "EMPLOYMENT AND SKILLS  DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.488/2022/IDN",
+                "Date": "2022-05-24",
+                "Score": 5.183258533477783,
+                "Department": "INDUSTRIES  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1298/2022/LSDN",
+                "Date": "2022-05-25",
+                "Score": 5.125578880310059,
+                "Department": "LOCAL SELF-GOVERNMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.573/2022/PWDN",
+                "Date": "2022-05-25",
+                "Score": 5.125578880310059,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.321/2022/FHDN",
+                "Date": "2022-05-25",
+                "Score": 5.125578880310059,
+                "Department": "FISHERIES HARBOR  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.469/2022/DMDN",
+                "Date": "2022-05-25",
+                "Score": 5.125578880310059,
+                "Department": "DISASTER MANAGEMENT  DEPARTMENT"
+            }
+        ]
+    },
+    "4": {
+        "query": "1339/2022/LSDN",
+        "fromOrderID": null,
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.253/2022/WaCDDN",
+                "Date": "2022-05-24",
+                "Score": 1.0,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.130/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 1.0,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.480/2022/DMDN",
+                "Date": "2022-05-28",
+                "Score": 1.0,
+                "Department": "DISASTER MANAGEMENT DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.476/2022/DMDN",
+                "Date": "2022-05-26",
+                "Score": 1.0,
+                "Department": "DISASTER MANAGEMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.250/2022/WaCDDN",
+                "Date": "2022-05-24",
+                "Score": 1.0,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.1339/2022/LSDN",
+                "Date": "2022-05-30",
+                "Score": 4.171080112457275,
+                "Department": "LOCAL SELF-GOVERNMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1306/2022/LSDN",
+                "Date": "2022-05-26",
+                "Score": 3.290248394012451,
+                "Department": "LOCAL SELF-GOVERNMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1287/2022/LSDN",
+                "Date": "2022-05-24",
+                "Score": 2.290248394012451,
+                "Department": "LOCAL SELF-GOVERNMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1298/2022/LSDN",
+                "Date": "2022-05-25",
+                "Score": 2.290248394012451,
+                "Department": "LOCAL SELF-GOVERNMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1307/2022/LSDN",
+                "Date": "2022-05-26",
+                "Score": 2.290248394012451,
+                "Department": "LOCAL SELF-GOVERNMENT  DEPARTMENT"
+            }
+        ]
+    },
+    "5": {
+        "query": "27/05/2022",
+        "fromOrderID": null,
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.614/2022/DoEaSN",
+                "Date": "2022-05-28",
+                "Score": 3.211524724960327,
+                "Department": "DEPARTMENT OF EMPLOYMENT AND SKILLS ."
+            },
+            {
+                "ID": "G.O.(Rt)No.255/2022/WaCDDN",
+                "Date": "2022-05-25",
+                "Score": 3.0668814182281494,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.488/2022/IDN",
+                "Date": "2022-05-24",
+                "Score": 2.5958659648895264,
+                "Department": "INDUSTRIES  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3215/2022/DoPEN",
+                "Date": "2022-05-26",
+                "Score": 2.424227237701416,
+                "Department": "DEPARTMENT OF PUBLIC EDUCATION ."
+            },
+            {
+                "ID": "G.O.(Rt)No.604/2022/EaSDN",
+                "Date": "2022-05-25",
+                "Score": 2.3545913696289062,
+                "Department": "EMPLOYMENT AND SKILLS  DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.143/2022/RDN",
+                "Date": "2022-05-27",
+                "Score": 6.125578880310059,
+                "Department": "RAVANYA  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.131/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 6.125578880310059,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.130/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 6.125578880310059,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1491/2020/HEDN",
+                "Date": "2020-11-27",
+                "Score": 3.214407444000244,
+                "Department": "HIGHER EDUCATION (F) DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.1489/2020/HEDN",
+                "Date": "2020-11-27",
+                "Score": 3.214407444000244,
+                "Department": "HIG HER EDUCATION (fF) DEPARTMENT"
+            }
+        ]
+    },
+    "6": {
+        "query": "public work department",
+        "fromOrderID": null,
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.579/2022/PWDN",
+                "Date": "2022-05-28",
+                "Score": 2.925816059112549,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3260/2022/GEDN",
+                "Date": "2022-05-30",
+                "Score": 2.225588798522949,
+                "Department": "GENERAL EDUCATION)  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3215/2022/DoPEN",
+                "Date": "2022-05-26",
+                "Score": 2.2005538940429688,
+                "Department": "DEPARTMENT OF PUBLIC EDUCATION ."
+            },
+            {
+                "ID": "G.O.(Rt)No.574/2022/PWDN",
+                "Date": "2022-05-26",
+                "Score": 2.1318068504333496,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.321/2022/FHDN",
+                "Date": "2022-05-25",
+                "Score": 2.1217546463012695,
+                "Department": "FISHERIES HARBOR  DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.579/2022/PWDN",
+                "Date": "2022-05-28",
+                "Score": 3.042240619659424,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.584/2022/PWDN",
+                "Date": "2022-05-29",
+                "Score": 3.042240619659424,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.573/2022/PWDN",
+                "Date": "2022-05-25",
+                "Score": 3.042240619659424,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.574/2022/PWDN",
+                "Date": "2022-05-26",
+                "Score": 3.042240619659424,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3216/2022/PEDN",
+                "Date": "2022-05-26",
+                "Score": 3.042240619659424,
+                "Department": "PUBLIC EDUCATION  DEPARTMENT"
+            }
+        ]
+    },
+    "7": {
+        "query": "department of public work",
+        "fromOrderID": null,
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.579/2022/PWDN",
+                "Date": "2022-05-28",
+                "Score": 3.072654962539673,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3260/2022/GEDN",
+                "Date": "2022-05-30",
+                "Score": 2.3926753997802734,
+                "Department": "GENERAL EDUCATION)  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3215/2022/DoPEN",
+                "Date": "2022-05-26",
+                "Score": 2.3473925590515137,
+                "Department": "DEPARTMENT OF PUBLIC EDUCATION ."
+            },
+            {
+                "ID": "G.O.(Rt)No.321/2022/FHDN",
+                "Date": "2022-05-25",
+                "Score": 2.287839412689209,
+                "Department": "FISHERIES HARBOR  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.481/2022/DMDN",
+                "Date": "2022-05-28",
+                "Score": 2.2102744579315186,
+                "Department": "DISASTER MANAGEMENT  DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.3215/2022/DoPEN",
+                "Date": "2022-05-26",
+                "Score": 3.711456298828125,
+                "Department": "DEPARTMENT OF PUBLIC EDUCATION ."
+            },
+            {
+                "ID": "G.O.(Rt)No.3216/2022/PEDN",
+                "Date": "2022-05-26",
+                "Score": 3.711456298828125,
+                "Department": "PUBLIC EDUCATION  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3260/2022/GEDN",
+                "Date": "2022-05-30",
+                "Score": 3.711456298828125,
+                "Department": "GENERAL EDUCATION)  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.481/2022/DMDN",
+                "Date": "2022-05-28",
+                "Score": 3.4582903385162354,
+                "Department": "DISASTER MANAGEMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.579/2022/PWDN",
+                "Date": "2022-05-28",
+                "Score": 3.3979926109313965,
+                "Department": "PUBLIC WORKS  DEPARTMENT"
+            }
+        ]
+    },
+    "8": {
+        "query": "order released on 27/05/2022",
+        "fromOrderID": null,
+        "oldMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.614/2022/DoEaSN",
+                "Date": "2022-05-28",
+                "Score": 4.52423620223999,
+                "Department": "DEPARTMENT OF EMPLOYMENT AND SKILLS ."
+            },
+            {
+                "ID": "G.O.(Rt)No.255/2022/WaCDDN",
+                "Date": "2022-05-25",
+                "Score": 3.932967185974121,
+                "Department": "WOMEN AND CHILD DEVELOPMENT  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.3215/2022/DoPEN",
+                "Date": "2022-05-26",
+                "Score": 3.7641940116882324,
+                "Department": "DEPARTMENT OF PUBLIC EDUCATION ."
+            },
+            {
+                "ID": "G.O.(Rt)No.488/2022/IDN",
+                "Date": "2022-05-24",
+                "Score": 3.0824270248413086,
+                "Department": "INDUSTRIES  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.604/2022/EaSDN",
+                "Date": "2022-05-25",
+                "Score": 3.033729076385498,
+                "Department": "EMPLOYMENT AND SKILLS  DEPARTMENT"
+            }
+        ],
+        "newMethodResults": [
+            {
+                "ID": "G.O.(Rt)No.143/2022/RDN",
+                "Date": "2022-05-27",
+                "Score": 6.125578880310059,
+                "Department": "RAVANYA  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.131/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 6.125578880310059,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.130/2022/SJDN",
+                "Date": "2022-05-27",
+                "Score": 6.125578880310059,
+                "Department": "SOCIAL JUSTICE  DEPARTMENT"
+            },
+            {
+                "ID": "G.O.(Rt)No.614/2022/DoEaSN",
+                "Date": "2022-05-28",
+                "Score": 4.478603839874268,
+                "Department": "DEPARTMENT OF EMPLOYMENT AND SKILLS ."
+            },
+            {
+                "ID": "G.O.(Rt)No.3215/2022/DoPEN",
+                "Date": "2022-05-26",
+                "Score": 4.366873741149902,
+                "Department": "DEPARTMENT OF PUBLIC EDUCATION ."
+            }
+        ]
+    }
+}

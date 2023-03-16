@@ -128,6 +128,7 @@ CREATE FULLTEXT INDEX BodyAndAbstract FOR (n:Body|Abstract) ON EACH [n.value]
 
 CREATE FULLTEXT INDEX BodyAndAbstract FOR (n:Abstract|Department|Body|Place|Date|Reference|Subsection) ON EACH [n.value,n.goID]
 
+CREATE FULLTEXT INDEX AllAttributes FOR (n:Abstract|Department|Body|Place|Date|Reference|Subsection) ON EACH [n.value,n.goID]
 //Once fulltext search is created, perform text based search easily
 //Search Query - "Dr.Jayasankar Prasad continued to hold full additional"
 //From DOC - G.O(Rt)No.11/2021U/HEDN

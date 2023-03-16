@@ -118,14 +118,14 @@ def queryByPlace(place:str,fromDate:str=None, toDate:str=None):
 
 
 
-def fulltextQuery(query:str,page:int=1):
+def fulltextQuery(query:str,page:int=1,limit:int=10,indexName:str='AllAttributes'):
     """
     Function for performing fulltext search
     NOTE: Fulltext in neo4j is implemented using Lucene
     NOTE: At a time only 10 results are returned, if there are more, then request for next page
-    page: skips the first 10*(page-1) results and returns the next 10 results
+    page: skips the first {limit}*(page-1) results and returns the next {limit} results
     """
-    query = "CALL db.index.fulltext.queryNodes('BodyAndAbstract', '"+query+"') YIELD node, score MATCH (go:GO)-[]-(node) RETURN go.GOID,go.lang,collect(score)[0] SKIP "+ str((page-1)*10)+" LIMIT 10"
+    query = "CALL db.index.fulltext.queryNodes('"+indexName+"', '"+query+"') YIELD node, score MATCH (go:GO)-[]-(node) RETURN go.GOID,go.lang,collect(score)[0] SKIP "+ str((page-1)*limit)+" LIMIT "+str(limit)
     print("Query: ",query)
     session = None
     response = None
@@ -373,12 +373,12 @@ def UserInterface(query:str,type:str,fromDate:str=None,toDate:str=None):
         print("Error: No results found")
         return None #NoneType error
 
-def SearchInterface(query:str,page:int=1):
+def SearchInterface(query:str,page:int=1,limit:int=10,indexName:str='AllAttributes'):
     """
     Extended fulltext search interface to user
     Returns the data which would be useful for user's search result
-    NOTE: At a time only 10 results are returned, if there are more, then request for next page
-    page: skips the first 10*(page-1) results and returns the next 10 results
+    NOTE: At a time only {limit} results are returned, if there are more, then request for next page
+    page: skips the first {limit}*(page-1) results and returns the next {limit} results
     Each response has
     Abstract: Abstract of the GO
     Date: Date of the GO
@@ -389,7 +389,7 @@ def SearchInterface(query:str,page:int=1):
     Department: Department of the GO
     SCORE: Score of the GO
     """
-    response = fulltextQuery(query,page)
+    response = fulltextQuery(query,page,limit,indexName)
     
     try:
         useful_response = getDetails(response) #getting useful details of each file
