@@ -1,5 +1,14 @@
 # Govt Order Knowledge Graph
-Repo for Mini Project
+
+This project leverages **Graph Databases** to store and manage government notices issued by the **Government of Kerala**. It provides a platform for **efficient retrieval** of notices based on user queries.  
+
+### Key Features  
+- **Semantic Search** – Retrieves results based on the meaning of the query rather than simple keyword matching.  
+- **Knowledge-Based Search** – Utilizes structured datasets to enhance accuracy.  
+- **Comprehensive Results** – Returns all relevant documents along with their corresponding hyperlinks.  
+
+This approach ensures more **precise and contextually relevant** search results, improving access to official notices.
+
 
 ## Ontology
 ![Ontology](img/KGO_Ontology.png)
